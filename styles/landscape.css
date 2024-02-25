@@ -1,0 +1,310 @@
+*{
+    font-family: "Protest Riot";
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #F8C6B5;
+    overflow: hidden;
+}
+
+#carousel{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+
+    width: 80vw;
+    height: 50vw;
+    max-width: 90vw;
+    max-height: 95vh;
+    perspective: 1000px;
+}
+
+.boxes{
+    position: absolute;
+
+    width: 95%;
+    height: 95%;
+
+    transform-style: preserve-3d;
+    transition: 1500ms ease-in-out;
+}
+
+.box{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    width: 95%;
+    height: 95%;
+
+    border: 2px solid #DA9E8C;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0.2;
+    transition: all 1500ms ease-in-out;
+}
+
+.box.selected{
+    border-color: #D77F66;
+    border-width: 3px;
+    opacity: 1;
+}
+
+.section_title{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 30%;
+    height: 100%;
+
+    background-color: #B15A43;
+    padding: 2%;
+
+    font-size: 2.8rem;
+    color: #F8C6B5;
+    text-align: right;
+    overflow-wrap: break-word;
+    transition: all 500ms ease-in-out;
+}
+
+.box.selected .section_title{
+    background-color: #DA9E8C;
+    text-shadow: 0.2rem 0.2rem 0.5rem #B15A43;
+}
+
+.section_content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    width: 70%;
+    height: 100%;
+
+    background-color: #B15A43;
+    padding: 5%;
+
+    font-size: 1.2rem;
+    color: #B15A43;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 500ms ease-in-out;
+}
+
+.box.selected .section_content{
+    background-color: #F8C6B5;    
+}
+
+.box.selected .welcome,
+.box.selected .about{
+    color: #D77F66;
+}
+
+.cc_link,
+.about_link{
+    padding: 1% 0%;
+    text-decoration: none;
+    transition: all 500ms ease-in-out;
+}
+
+.box .cc_link,
+.box.selected .cc_link:hover,
+.box .about_link,
+.box.selected .about_link:hover{
+    color: #B15A43;
+}
+
+.box.selected .cc_link,
+.box.selected .about_link{
+    color: #D77F66;
+}
+
+.screenshots{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ss1,
+.ss2{
+    transition: 0.7s;
+    overflow: hidden;
+}
+
+.ss1 img{
+    width: 17.1vw;
+    height: 30.7vw;
+    object-position: center;   /*self added*/
+    object-fit: cover;
+    border: 2px solid #D77F66;
+    opacity: 0.4;
+}
+
+.ss2 img{
+    width: 15.3vw;
+    height: 30.7vw;
+    object-position: center;   /*self added*/
+    object-fit: cover;
+    border: 2px solid #D77F66;
+    opacity: 0.4;
+}
+
+.ss1:hover,
+.ss2:hover{
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.ss1 img:hover,
+.ss2 img:hover{
+    opacity: 1;
+}
+
+.game_section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #DA9E8C;
+    transition: all 1500ms ease-in-out;
+}
+
+.descriptions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.game_title{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40%;
+    height: 100%;
+
+    background-color: #B15A43;
+    padding: 5%;
+
+    font-size: 3rem;
+    color: #F8C6B5;
+    text-align: center;
+    opacity: 1;
+    transition: all 1500ms ease-in-out;
+}
+
+.game_content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 5%;
+    background-color: #F8C6B5;
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 0;
+    transition: all 1500ms ease-in-out;
+}
+
+.game_content a,
+.game_content span{
+    text-align: left;
+    opacity: 0;
+    transition: all 1500ms ease-in-out;
+}
+
+.gd_title{
+    font-size: 2rem;
+    color: #B15A43;
+}
+
+.gd_description{
+    font-size: 1.1rem;
+    color: #D77F66;
+}
+
+.gd_link{
+    font-size: 1.2rem;
+    color: #DA9E8C;
+    text-decoration: none;
+    transition: all 500ms ease-in-out;
+}
+
+.gd_link:hover{
+    color: #B15A43;
+}
+
+.material-symbols-outlined{
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.arrows{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    width: 10%;
+    height: 30%;
+}
+
+.previous,
+.next{
+    width: 7vw;
+    height: 7vw;
+    min-width: 30px;
+    min-height: 30px;
+
+    margin: 2% 0%;
+    border: 3px solid #DA9E8C;
+    border-radius: 10px;
+
+    background-color: #B15A43;
+    color: #DA9E8C;
+    transition: 0.3s;
+}
+
+.previous:hover,
+.next:hover{
+    background-color: #DA9E8C;
+    color: #B15A43;
+    border-color: #B15A43;
+}
